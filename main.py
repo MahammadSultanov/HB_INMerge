@@ -71,14 +71,14 @@ def create_detailed_prompt(request: CarpetDesignRequest) -> str:
     
     # Create detailed prompt
     prompt = (
-        f"A highly detailed, traditional Persian and Azerbaijan carpet design in the style of {request.design_style}, "
-        f"featuring {motif_description}, clearly visible in the carpet design. "
-        f"Intricate floral and geometric patterns, rich textures, and authentic weaving. "
-        f"Color palette: {colors_text}. "
-        f"Ornate, symmetrical, museum-quality, high-resolution, vibrant, "
-        f"inspired by historical carpets from Shirvan, Karabagh, and the Caucasus region."
-    )
-    
+    f"A highly detailed, modern representation of Azerbaijan technologies in the style of {request.design_style}, "
+    f"featuring {tech_description}, clearly visible in the design. "
+    f"Intricate digital and geometric patterns, futuristic textures, and authentic cultural influences. "
+    f"Color palette: {colors_text}. "
+    f"Ornate, symmetrical, high-resolution, vibrant, "
+    f"inspired by innovations from Baku, Sumgait, and the broader Caucasus region."
+
+            )
     # Add additional details if provided
     if request.additional_details:
         prompt += f" {request.additional_details}."
