@@ -54,31 +54,40 @@ def create_detailed_prompt(request: CarpetDesignRequest) -> str:
     colors_text = ", ".join(colors)
     
     # Get motif description
-    tech_description = ""
+    motif_description = ""
     motif = request.motif.lower()
     if motif == "buta":
-        tech_description = "Buta (traditional paisley motif, iconic Azerbaijan symbol representing life and eternity)"
+        motif_description = "Buta (traditional paisley motif, iconic Azerbaijan symbol representing life and eternity)"
     elif motif == "rosekhatte":
-        tech_description = "RoseKhatte (rose and line motif, symbol of beauty and elegance in Azerbaijan carpets)"
+        motif_description = "RoseKhatte (rose and line motif, symbol of beauty and elegance in Azerbaijan carpets)"
     elif motif == "bird":
-        tech_description = "Bird (freedom and nature symbol, representing the soul's journey to heaven)"
+        motif_description = "Bird (freedom and nature symbol, representing the soul's journey to heaven)"
     elif "geometric" in motif:
-        tech_description = "intricate geometric patterns (mathematical precision representing divine order and infinity)"
+        motif_description = "intricate geometric patterns (mathematical precision representing divine order and infinity)"
     elif "floral" in motif:
-        tech_description = "traditional floral designs (garden of paradise motifs with roses, tulips, and vines)"
+        motif_description = "traditional floral designs (garden of paradise motifs with roses, tulips, and vines)"
     else:
-        tech_description = f"{request.motif} motif"
+        motif_description = f"{request.motif} motif"
     
-    # Create detailed prompt
+    # Create detailed prompti
     prompt = (
-    f"A highly detailed, modern representation of Azerbaijan technologies in the style of {request.design_style}, "
-    f"featuring {tech_description}, clearly visible in the design. "
-    f"Intricate digital and geometric patterns, futuristic textures, and authentic cultural influences. "
-    f"Color palette: {colors_text}. "
-    f"Ornate, symmetrical, high-resolution, vibrant, "
-    f"inspired by innovations from Baku, Sumgait, and the broader Caucasus region."
-
-            )
+        f"A highly detailed, modern representation of Azerbaijan technologies in the style of {request.design_style}, "
+        f"featuring {motif_description}, clearly visible in the design. "
+        f"Intricate digital and cyberpunk patterns, futuristic textures, and authentic cultural influences. "
+        f"Color palette: {colors_text}. "
+        f"Ornate, symmetrical, high-resolution, vibrant, "
+        f"inspired by innovations from Baku, Sumgait, and the broader Caucasus region."
+)
+   """ prompt = (
+        f"A highly detailed, traditional Persian and Azerbaijan carpet design in the style of {request.design_style}, "
+        f"featuring {motif_description}, clearly visible in the carpet design. "
+        f"Intricate floral and geometric patterns, rich textures, and authentic weaving. "
+        f"Color palette: {colors_text}. "
+        f"Ornate, symmetrical, museum-quality, high-resolution, vibrant, "
+        f"inspired by historical carpets from Shirvan, Karabagh, and the Caucasus region."
+    )
+    """
+    
     # Add additional details if provided
     if request.additional_details:
         prompt += f" {request.additional_details}."
