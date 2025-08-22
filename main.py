@@ -54,20 +54,20 @@ def create_detailed_prompt(request: CarpetDesignRequest) -> str:
     colors_text = ", ".join(colors)
     
     # Get motif description
-    motif_description = ""
+    tech_description = ""
     motif = request.motif.lower()
     if motif == "buta":
-        motif_description = "Buta (traditional paisley motif, iconic Azerbaijan symbol representing life and eternity)"
+        tech_description = "Buta (traditional paisley motif, iconic Azerbaijan symbol representing life and eternity)"
     elif motif == "rosekhatte":
-        motif_description = "RoseKhatte (rose and line motif, symbol of beauty and elegance in Azerbaijan carpets)"
+        tech_description = "RoseKhatte (rose and line motif, symbol of beauty and elegance in Azerbaijan carpets)"
     elif motif == "bird":
-        motif_description = "Bird (freedom and nature symbol, representing the soul's journey to heaven)"
+        tech_description = "Bird (freedom and nature symbol, representing the soul's journey to heaven)"
     elif "geometric" in motif:
-        motif_description = "intricate geometric patterns (mathematical precision representing divine order and infinity)"
+        tech_description = "intricate geometric patterns (mathematical precision representing divine order and infinity)"
     elif "floral" in motif:
-        motif_description = "traditional floral designs (garden of paradise motifs with roses, tulips, and vines)"
+        tech_description = "traditional floral designs (garden of paradise motifs with roses, tulips, and vines)"
     else:
-        motif_description = f"{request.motif} motif"
+        tech_description = f"{request.motif} motif"
     
     # Create detailed prompt
     prompt = (
